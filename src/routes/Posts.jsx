@@ -15,7 +15,7 @@ function Posts() {
       const resData = await response.json();
       const loadedPosts = [];
       for (const key in resData) {
-        loadedPosts.push({
+        loadedPosts.unshift({
           id: key,
           author: resData[key].author,
           body: resData[key].body,
