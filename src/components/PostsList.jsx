@@ -15,8 +15,8 @@ function PostsList({posts}) {
       )}
       {posts.length === 0 && (
         <div style={{ textAlign: 'center', color: 'white' }}>
-          <h2>There are no posts yet.</h2>
-          <p>Start adding some!</p>
+          <h2>There are no chats yet</h2>
+          <p>Start talking!</p>
         </div>
       )}
     </>

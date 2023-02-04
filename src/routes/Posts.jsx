@@ -27,9 +27,9 @@ function Posts() {
     return () => {
       clearInterval(timer);
     };
+    
   }, []);
 
-  console.log(posts)
   return (
     <>
       <Outlet />

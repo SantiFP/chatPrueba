@@ -8,12 +8,12 @@ function MainHeader() {
     <header className={classes.header}>
       <h1 className={classes.logo}>
         <MdMessage />
-        React Poster
+        My chat
       </h1>
       <p>
         <Link to="/create-post" className={classes.button} >
           <MdPostAdd size={18} />
-          New Post
+          New Message
         </Link>
       </p>
     </header>

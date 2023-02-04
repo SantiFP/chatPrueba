@@ -9,10 +9,24 @@
   border-bottom: 2px solid #ece1fa;
 }
 
+@media only screen and (max-width: 768px) {
+  .header {
+    /* padding: 2rem 10%; */
+
+    margin: 2rem 10%;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #ece1fa;
+  }
+}
+
 .logo {
   font-size: 2rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
   color: #ece1fa;
 }
@@ -22,8 +36,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: #a990fb;
-  color: #2a2630;
+  background-color: #4242e3;
+  color: white;
   border: none;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -33,5 +47,6 @@
 }
 
 .button:hover {
-  background-color: #8c6cf7;
+  background-color: #3939de;
+
 }

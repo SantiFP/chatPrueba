@@ -1,44 +1,53 @@
-import { Link, Form, redirect } from 'react-router-dom';
+import { Link , redirect} from 'react-router-dom';
 
 import classes from './NewPost.module.css';
 import Modal from '../components/Modal';
+import {useRef, useContext} from 'react';
+import ChatContext from '../store/chat-context';
+import { useNavigate } from 'react-router-dom';
 
 function NewPost() {
+  const navigate = useNavigate();
+
+  const chatCtx = useContext(ChatContext);
+
+  const textRef = useRef();
+
+  const submitData = async (e) => {
+    e.preventDefault();
+    const formData = textRef.current.value;
+    await fetch('https://pepito-e96e6-default-rtdb.firebaseio.com/posts.json', {
+      method: 'POST',
+      body: JSON.stringify({
+        body: formData,
+        author: chatCtx.name
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  
+    navigate('/')
+  };
+  
+
   return (
     <Modal>
-      <Form method='post' className={classes.form}>
+      <form onSubmit={submitData} className={classes.form}>
         <p>
-          <label htmlFor="body">Text</label>
-          <textarea id="body" name="body" required rows={3} />
-        </p>
-        <p>
-          <label htmlFor="name">Your name</label>
-          <input type="text" id="name" name="author" required />
+          <label htmlFor="body">Message</label>
+          <textarea ref={textRef} id="body" name="body" required rows={3} />
         </p>
         <p className={classes.actions}>
           <Link to=".." type="button">
             Cancel
           </Link>
-          <button>Submit</button>
+          <button>Send</button>
         </p>
-      </Form>
+      </form>
     </Modal>
   );
 }
 
 export default NewPost;
 
-export async function action({request}) {
-  
-  const formData = await request.formData();
-  const postData = Object.fromEntries(formData); // { body: '...', author: '...' }
-  await fetch('https://pepito-e96e6-default-rtdb.firebaseio.com/posts.json', {
-    method: 'POST',
-    body: JSON.stringify(postData),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  return redirect('/');
-}
