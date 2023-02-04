@@ -47,7 +47,7 @@ function RootLayout() {
   return (
     <>
       <MainHeader />
-      {showModal && modal}
+      {/* {showModal && modal} */}
       <div className={classes.hello}>{`Hello ${name}`}</div>
 
       <Outlet />

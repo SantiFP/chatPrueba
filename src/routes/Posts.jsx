@@ -5,7 +5,8 @@ import PostsList from "../components/PostsList";
 
 function Posts() {
 
-  const [posts,setPosts] = useState([]);
+  const [posts,setPosts] = useState(null);
+  const [loading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const timer = setInterval(async () => {
@@ -20,7 +21,8 @@ function Posts() {
           author: resData[key].author,
           body: resData[key].body,
         });
-      }
+      };
+      setIsLoading(false)
       return loadedPosts ? setPosts(loadedPosts) : [];
     }, 1000);
 
@@ -34,7 +36,7 @@ function Posts() {
     <>
       <Outlet />
       <main>
-        <PostsList posts={posts} />
+        <PostsList loading={loading} posts={posts} />
       </main>
     </>
   );
