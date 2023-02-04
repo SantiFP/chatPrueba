@@ -39,7 +39,7 @@ function NewPost() {
           <textarea ref={textRef} id="body" name="body" required rows={3} />
         </p>
         <p className={classes.actions}>
-          <Link to=".." type="button">
+          <Link style={{color: '#537fbc'}} to=".." type="button">
             Cancel
           </Link>
           <button>Send</button>
