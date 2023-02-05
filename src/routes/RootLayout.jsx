@@ -34,6 +34,7 @@ function RootLayout() {
             id="body"
             name="body"
             required
+            autoFocus
             rows={3}
           />
         </p>
@@ -47,7 +48,7 @@ function RootLayout() {
   return (
     <>
       <MainHeader />
-      {showModal && modal}
+      {showModal && modal }
       <div className={classes.hello}>{`Hello ${name}`}</div>
 
       <Outlet />

@@ -26,7 +26,7 @@ function NewPost() {
         'Content-Type': 'application/json',
       },
     });
-  
+    
     navigate('/')
   };
   
@@ -36,7 +36,7 @@ function NewPost() {
       <form onSubmit={submitData} className={classes.form}>
         <p>
           <label htmlFor="body">Message</label>
-          <textarea ref={textRef} id="body" name="body" required rows={3} />
+          <textarea ref={textRef} autoFocus id="body" name="body" required rows={3} />
         </p>
         <p className={classes.actions}>
           <Link style={{color: '#537fbc'}} to=".." type="button">
