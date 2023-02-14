@@ -24,7 +24,7 @@ function Posts() {
       };
       setIsLoading(false)
       return loadedPosts ? setPosts(loadedPosts) : [];
-    }, 1000);
+    }, 500);
 
     return () => {
       clearInterval(timer);
