@@ -1,7 +1,7 @@
 import Post from "./Post";
 import classes from "./PostsList.module.css";
 
-function PostsList({ posts, loading }) {
+function PostsList({ posts, loading }) {  
   return (
     <>
       {loading && <div className={classes.loadingDiv}>

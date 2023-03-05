@@ -16,7 +16,7 @@ function NewPost() {
   const submitData = async (e) => {
     e.preventDefault();
     const formData = textRef.current.value;
-    await fetch('https://pepito-e96e6-default-rtdb.firebaseio.com/posts.json', {
+    await fetch('https://chatsanti-1e944-default-rtdb.firebaseio.com/posts.json', {
       method: 'POST',
       body: JSON.stringify({
         body: formData,
