@@ -1,3 +1,3 @@
 # chatPrueba
 
-to try the app, run npm install and then npm run dev.
+in order to execute the app, run npm install and then npm run dev.
