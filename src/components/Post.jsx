@@ -3,7 +3,7 @@ import classes from './Post.module.css';
 function Post({ id, author, body }) {
 
   const remove = async () => {
-    await fetch(`https://chatsanti-1e944-default-rtdb.firebaseio.com/posts/${id}.json/`,{
+    await fetch(`https://react-deployment-demo-c1309-default-rtdb.firebaseio.com/posts/${id}.json/`,{
       method: 'DELETE',  
     }); 
   };

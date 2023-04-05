@@ -11,7 +11,7 @@ function Posts() {
   useEffect(() => {
     const timer = setInterval(async () => {
       const response = await fetch(
-        "https://chatsanti-1e944-default-rtdb.firebaseio.com/posts.json"
+        "https://react-deployment-demo-c1309-default-rtdb.firebaseio.com/posts.json"
       );
       const resData = await response.json();
       const loadedPosts = [];
